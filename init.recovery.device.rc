@@ -1,6 +1,19 @@
+on boot
+    setprop sys.usb.config adb
+    write /proc/touchpanel/gesture_enable 1
+    write /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb/otg_switch 1
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_a
+    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_b
+
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+    install_keyring
 
 on init
     setprop sys.usb.configfs 1
@@ -14,9 +27,145 @@ on init
     write /sys/block/sda/queue/discard_max_bytes 134217728
     start touchdriver
 
+on property:crypto.ready=0
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+
+on property:sys.usb.config=mtp,adb
+    restart time_daemon
+
 service touchdriver /sbin/touchdriver.sh
     oneshot
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
+
+on property:twrp.apex.loaded=true
+   export LD_LIBRARY_PATH /sbin:/sbin/com.android.runtime.release.apex-mount/lib64:/sbin/com.google.android.media.swcodec.apex-mount/lib64/
+   start prepdecrypt
+
+on property:prep.decrypt=1
+   start servicemanager
+   start hwservicemanager
+   start vndservicemanager
+   start sbinqseecomd
+   start boot-1-0
+   start time_daemon
+   start vendor.citadeld
+   start vendor.weaver_hal
+   start vendor.authsecret
+   start vendor.oemlock
+   start gatekeeper-1-0
+   start vendor.keymaster-4-0-citadel
+   start keymaster-4-0
+   restart time_daemon
+
+# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
+service sbinqseecomd /sbin/qseecomd
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service prepdecrypt /sbin/prepdecrypt.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service hwservicemanager /sbin/hwservicemanager
+    user root
+    group root
+    disabled
+    onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service boot-1-0 /sbin/android.hardware.boot@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service servicemanager /sbin/servicemanager
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore_auth /sbin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+# keystore is started and stopped on demand by TWRP
+service keystore /sbin/keystore /tmp/misc/keystore
+    user root
+    group root drmrpc readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service time_daemon /sbin/time_daemon
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.weaver_hal /sbin/android.hardware.weaver@1.0-service.citadel
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vendor.authsecret /sbin/android.hardware.authsecret@1.0-service.citadel
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vendor.oemlock /sbin/android.hardware.oemlock@1.0-service.citadel
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vendor.keymaster-4-0-citadel /vendor/bin/hw/android.hardware.keymaster@4.0-service.citadel
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vendor.citadeld /sbin/citadeld
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vndservicemanager /sbin/vndservicemanager /dev/vndbinder
+    disabled
+    user root
+    group root
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:recovery:s0
+
+# Weaver services have to be stopped in order to wipe Titan M during a format data
+on property:weaver.stop=1
+    stop vendor.citadeld
+    stop vendor.weaver_hal

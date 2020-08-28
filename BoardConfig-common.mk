@@ -200,10 +200,10 @@ TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
 
 
 # Vendor Interface Manifest
-DEVICE_MANIFEST_FILE := device/google/sunfish/manifest.xml
-DEVICE_MATRIX_FILE := device/google/sunfish/compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/google/sunfish/device_framework_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := device/google/sunfish/framework_manifest.xml
+#DEVICE_MANIFEST_FILE := device/google/sunfish/prebuilts/manifest.xml
+#DEVICE_MATRIX_FILE := device/google/sunfish/compatibility_matrix.xml
+#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/google/sunfish/device_framework_matrix.xml
+#DEVICE_FRAMEWORK_MANIFEST_FILE := device/google/sunfish/framework_manifest.xml
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
@@ -269,23 +269,20 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_DEFAULT_BRIGHTNESS := "80"
-#TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
 AB_OTA_UPDATER := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libhardware_legacy.so
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/system/bin/strace
-TARGET_RECOVERY_DEVICE_MODULES += strace
-#TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-#TARGET_RECOVERY_DEVICE_MODULES += android.hardware.confirmationui@1.0.so
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES := out/target/product/$(PRODUCT_HARDWARE)/system/lib64/android.hardware.boot@1.0.so
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/system/lib64/vndk-28/android.hardware.confirmationui@1.0.so
-#TARGET_RECOVERY_DEVICE_MODULES += libxml2 libicuuc libprotobuf-cpp-full
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/system/lib64/libxml2.so out/target/product/$(PRODUCT_HARDWARE)/system/lib64/libicuuc.so out/target/product/$(PRODUCT_HARDWARE)/system/lib64/libprotobuf-cpp-full.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/system/bin/strace 
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/vendor/lib/hw/bootctrl.msmnile.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/vendor/lib/hw/bootctrl.msmnile.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/system/bin/crash_dump32
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += out/target/product/$(PRODUCT_HARDWARE)/system/bin/crash_dump64
+TARGET_RECOVERY_DEVICE_MODULES += strace bootctrl.msmnile crash_dump
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 # MTP will not work until we update it to support ffs
 TW_EXCLUDE_MTP := true
-#PLATFORM_SECURITY_PATCH := 2025-12-31
 TW_USE_TOOLBOX := true
 #TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TW_NO_HAPTICS := true
+TW_NO_BIND_SYSTEM := true

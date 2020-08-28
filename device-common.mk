@@ -78,7 +78,45 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/sunfish/modules/ftm5.ko:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/ftm5.ko \
     device/google/sunfish/modules/heatmap.ko:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/heatmap.ko \
-    device/google/sunfish/touchdriver.sh:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/touchdriver.sh
+    device/google/sunfish/touchdriver.sh:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/touchdriver.sh \
+    device/google/sunfish/prebuilts/qseecomd:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/qseecomd \
+    device/google/sunfish/prebuilts/libdrmfs.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libdrmfs.so \
+    device/google/sunfish/prebuilts/libxml2.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libxml2.so \
+    device/google/sunfish/prebuilts/libvintf.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libvintf.so \
+    device/google/sunfish/prebuilts/libnetd_client.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnetd_client.so \
+    device/google/sunfish/prebuilts/libkeymasterdeviceutils.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libkeymasterdeviceutils.so \
+    device/google/sunfish/prebuilts/libgptutils.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libgptutils.so \
+    device/google/sunfish/prebuilts/libkeymasterutils.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libkeymasterutils.so \
+    device/google/sunfish/prebuilts/libqtikeymaster4.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libqtikeymaster4.so \
+    device/google/sunfish/prebuilts/libQSEEComAPI.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libQSEEComAPI.so \
+    device/google/sunfish/prebuilts/libdiag.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libdiag.so \
+    device/google/sunfish/prebuilts/android.hidl.token@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hidl.token@1.0.so \
+    device/google/sunfish/prebuilts/libnos_client_citadel.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_client_citadel.so \
+    device/google/sunfish/prebuilts/libnos_transport.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_transport.so \
+    device/google/sunfish/prebuilts/citadeld:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/citadeld \
+    device/google/sunfish/prebuilts/prepdecrypt.sh:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/prepdecrypt.sh \
+    device/google/sunfish/prebuilts/time_daemon:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/time_daemon \
+    device/google/sunfish/prebuilts/libqmi_cci.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libqmi_cci.so \
+    device/google/sunfish/prebuilts/libqmi_common_so.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libqmi_common_so.so \
+    device/google/sunfish/prebuilts/manifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/manifest.xml \
+    device/google/sunfish/prebuilts/compatibility_matrix.device.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.device.xml \
+    device/google/sunfish/prebuilts/compatibility_matrix.legacy.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.legacy.xml \
+    device/google/sunfish/prebuilts/android.hardware.gatekeeper@1.0-service-qti:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.gatekeeper@1.0-service-qti \
+    device/google/sunfish/prebuilts/android.hardware.keymaster@4.0-service-qti:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.keymaster@4.0-service-qti \
+    device/google/sunfish/prebuilts/android.hardware.boot@1.0-service:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.boot@1.0-service \
+    device/google/sunfish/prebuilts/android.hardware.weaver@1.0-impl.nos.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.weaver@1.0-impl.nos.so \
+    device/google/sunfish/prebuilts/android.hardware.weaver@1.0-service.citadel:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.weaver@1.0-service.citadel \
+    device/google/sunfish/prebuilts/android.hardware.weaver@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.weaver@1.0.so \
+    device/google/sunfish/prebuilts/android.hardware.authsecret@1.0-service.citadel:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.authsecret@1.0-service.citadel \
+    device/google/sunfish/prebuilts/android.hardware.authsecret@1.0-impl.nos.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.authsecret@1.0-impl.nos.so \
+    device/google/sunfish/prebuilts/android.hardware.authsecret@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.authsecret@1.0.so \
+    device/google/sunfish/prebuilts/android.hardware.oemlock@1.0-service.citadel:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.oemlock@1.0-service.citadel \
+    device/google/sunfish/prebuilts/android.hardware.oemlock@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.oemlock@1.0.so \
+    device/google/sunfish/prebuilts/nos_app_weaver.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/nos_app_weaver.so \
+    device/google/sunfish/prebuilts/libnos_citadeld_proxy.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_citadeld_proxy.so \
+    device/google/sunfish/prebuilts/libnos_datagram_citadel.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_datagram_citadel.so\
+    device/google/sunfish/prebuilts/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libprotobuf-cpp-full.so \
+    device/google/sunfish/prebuilts/pixelpowerstats_provider_aidl_interface-cpp.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/pixelpowerstats_provider_aidl_interface-cpp.so
 
 # Pixelstats broken mic detection
 PRODUCT_PROPERTY_OVERRIDES += vendor.audio.mic_break=true
