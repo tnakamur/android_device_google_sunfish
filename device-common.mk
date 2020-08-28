@@ -74,6 +74,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     device/google/sunfish/init.logging.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(PRODUCT_PLATFORM).logging.rc
 
+#touch modules
+PRODUCT_COPY_FILES += \
+    device/google/sunfish/modules/ftm5.ko:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/ftm5.ko \
+    device/google/sunfish/modules/heatmap.ko:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/heatmap.ko \
+    device/google/sunfish/touchdriver.sh:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/touchdriver.sh
+
 # Pixelstats broken mic detection
 PRODUCT_PROPERTY_OVERRIDES += vendor.audio.mic_break=true
 
