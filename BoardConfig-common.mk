@@ -91,6 +91,15 @@ TARGET_RECOVERY_UI_LIB := \
     libbootloader_message \
     libfstab
 
+TARGET_RECOVERY_TWRP_LIB := \
+    librecovery_twrp_sunfish \
+    libnos_citadel_for_recovery \
+    libnos_for_recovery \
+    liblog \
+    libbootloader_message \
+    libfstab \
+    libext4_utils
+
 # Enable chain partition for system.
 BOARD_AVB_VBMETA_SYSTEM := system
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
