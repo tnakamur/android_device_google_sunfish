@@ -59,6 +59,5 @@ else
 	finish
 fi
 
-sleep 30
 finish
 exit 0

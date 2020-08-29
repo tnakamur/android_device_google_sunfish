@@ -45,11 +45,11 @@ service touchdriver /sbin/touchdriver.sh
 
 on property:twrp.apex.loaded=true
    export LD_LIBRARY_PATH /sbin:/sbin/com.android.runtime.release.apex-mount/lib64:/sbin/com.google.android.media.swcodec.apex-mount/lib64:/sbin/com.android.media.swcodec.apex-mount/lib64
+   start servicemanager
+   start hwservicemanager
    start prepdecrypt
 
 on property:prep.decrypt=1
-   start servicemanager
-   start hwservicemanager
    start vndservicemanager
    start sbinqseecomd
    start boot-1-0
