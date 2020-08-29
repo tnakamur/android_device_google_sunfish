@@ -44,7 +44,7 @@ service touchdriver /sbin/touchdriver.sh
     seclabel u:r:recovery:s0
 
 on property:twrp.apex.loaded=true
-   export LD_LIBRARY_PATH /sbin:/sbin/com.android.runtime.release.apex-mount/lib64:/sbin/com.google.android.media.swcodec.apex-mount/lib64/
+   export LD_LIBRARY_PATH /sbin:/sbin/com.android.runtime.release.apex-mount/lib64:/sbin/com.google.android.media.swcodec.apex-mount/lib64:/sbin/com.android.media.swcodec.apex-mount/lib64
    start prepdecrypt
 
 on property:prep.decrypt=1
