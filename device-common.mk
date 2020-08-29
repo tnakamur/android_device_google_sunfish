@@ -82,7 +82,6 @@ PRODUCT_COPY_FILES += \
     device/google/sunfish/prebuilts/qseecomd:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/qseecomd \
     device/google/sunfish/prebuilts/libdrmfs.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libdrmfs.so \
     device/google/sunfish/prebuilts/libxml2.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libxml2.so \
-    device/google/sunfish/prebuilts/libvintf.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libvintf.so \
     device/google/sunfish/prebuilts/libnetd_client.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnetd_client.so \
     device/google/sunfish/prebuilts/libkeymasterdeviceutils.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libkeymasterdeviceutils.so \
     device/google/sunfish/prebuilts/libgptutils.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libgptutils.so \
@@ -90,7 +89,6 @@ PRODUCT_COPY_FILES += \
     device/google/sunfish/prebuilts/libqtikeymaster4.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libqtikeymaster4.so \
     device/google/sunfish/prebuilts/libQSEEComAPI.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libQSEEComAPI.so \
     device/google/sunfish/prebuilts/libdiag.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libdiag.so \
-    device/google/sunfish/prebuilts/android.hidl.token@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hidl.token@1.0.so \
     device/google/sunfish/prebuilts/libnos_client_citadel.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_client_citadel.so \
     device/google/sunfish/prebuilts/libnos_transport.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_transport.so \
     device/google/sunfish/prebuilts/citadeld:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/citadeld \
@@ -106,12 +104,9 @@ PRODUCT_COPY_FILES += \
     device/google/sunfish/prebuilts/android.hardware.boot@1.0-service:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.boot@1.0-service \
     device/google/sunfish/prebuilts/android.hardware.weaver@1.0-impl.nos.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.weaver@1.0-impl.nos.so \
     device/google/sunfish/prebuilts/android.hardware.weaver@1.0-service.citadel:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.weaver@1.0-service.citadel \
-    device/google/sunfish/prebuilts/android.hardware.weaver@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.weaver@1.0.so \
     device/google/sunfish/prebuilts/android.hardware.authsecret@1.0-service.citadel:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.authsecret@1.0-service.citadel \
     device/google/sunfish/prebuilts/android.hardware.authsecret@1.0-impl.nos.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.authsecret@1.0-impl.nos.so \
-    device/google/sunfish/prebuilts/android.hardware.authsecret@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.authsecret@1.0.so \
     device/google/sunfish/prebuilts/android.hardware.oemlock@1.0-service.citadel:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.oemlock@1.0-service.citadel \
-    device/google/sunfish/prebuilts/android.hardware.oemlock@1.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/android.hardware.oemlock@1.0.so \
     device/google/sunfish/prebuilts/nos_app_weaver.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/nos_app_weaver.so \
     device/google/sunfish/prebuilts/libnos_citadeld_proxy.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos_citadeld_proxy.so \
     device/google/sunfish/prebuilts/libnos.so:$(TARGET_COPY_OUT_RECOVERY)/root/sbin/libnos.so \
