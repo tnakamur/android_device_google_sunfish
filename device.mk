@@ -157,7 +157,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.sys.sdcardfs=1
 
 PRODUCT_PACKAGES += \
-    bootctrl.sm6150
+    bootctrl.sm6150 \
+    bootctrl.sm6150.recovery
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cp_system_other_odex=1
@@ -167,14 +168,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
-
-# Enable update engine sideloading by including the static version of the
-# boot_control HAL and its dependencies.
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.sm6150 \
-    libgptutils \
-    libz \
-    libcutils
 
 PRODUCT_PACKAGES += \
     update_engine_sideload \
@@ -469,6 +462,7 @@ PRODUCT_PACKAGES += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-impl.recovery \
     android.hardware.boot@1.0-service \
 
 # Vibrator HAL
@@ -702,7 +696,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/hidl/android.hidl.base@1.0.so-32:system/lib/android.hidl.base@1.0.so \
     $(LOCAL_PATH)/hidl/android.hidl.base@1.0.so-64:system/lib64/android.hidl.base@1.0.so \
     $(LOCAL_PATH)/hidl/android.hidl.base@1.0.so-32:vendor/lib/android.hidl.base@1.0.so \
