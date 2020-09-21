@@ -41,7 +41,7 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
 PRODUCT_NAME := omni_sunfish
 PRODUCT_DEVICE := sunfish
-PRODUCT_MODEL := sunfish
+PRODUCT_MODEL := AOSP on sunfish
 
 PRODUCT_COPY_FILES += \
     device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml

@@ -1,0 +1,5 @@
+cc_library {
+	name: "bootctrl.sm6150",
+	defaults: ["bootctrl_hal_defaults"],
+        static_libs: ["libgptutils.sunfish"],
+}
