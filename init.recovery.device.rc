@@ -166,7 +166,7 @@ service vndservicemanager /system/bin/vndservicemanager /dev/vndbinder
     writepid /dev/cpuset/system-background/tasks
     seclabel u:r:recovery:s0
 
-service vibrator-service /system/bin/android.hardware.vibrator@1.3-service.coral
+service vibrator-service /system/bin/android.hardware.vibrator@1.3-service.sunfish
     class hal
     user root
     group root
