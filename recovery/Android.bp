@@ -50,7 +50,7 @@ cc_library_static {
     ],
     include_dirs: [
         "bootable/recovery/",
-        "bootable/recovery/install/include",
+        "bootable/recovery/twrpinstall/include",
 	"bootable/recovery/crypto/fscrypt",
 	"bootable/recovery/bootloader_message/include",
         "system/core/libziparchive/include/",

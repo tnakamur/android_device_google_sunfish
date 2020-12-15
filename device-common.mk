@@ -116,7 +116,8 @@ PRODUCT_COPY_FILES += \
     device/google/sunfish/prebuilts/pixelpowerstats_provider_aidl_interface-cpp.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/pixelpowerstats_provider_aidl_interface-cpp.so \
     device/google/sunfish/prebuilts/android.hardware.vibrator@1.3-service.sunfish:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/android.hardware.vibrator@1.3-service.sunfish \
     device/google/sunfish/prebuilts/twrp.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags \
-    device/google/sunfish/ueventd.rc:$(TARGET_COPY_OUT_RECOVERY)/root/ueventd.rc
+    device/google/sunfish/prebuilts/ueventd.rc:$(TARGET_COPY_OUT_RECOVERY)/root/ueventd.rc \
+    device/google/sunfish/prebuilts/otacerts.zip:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/security/otacerts.zip
 
 
 # Pixelstats broken mic detection
