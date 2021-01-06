@@ -1,5 +1,4 @@
 on boot
-    setprop sys.usb.config adb
     write /proc/touchpanel/gesture_enable 1
     write /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb/otg_switch 1
 
@@ -16,7 +15,6 @@ on fs
     install_keyring
 
 on init
-    setprop sys.usb.configfs 1
     # Don't lose recovery logs- keep warm reset for coming out of recovery.
     write /sys/module/msm_poweroff/parameters/warm_reset 1
     # Enable thermal mitigation
@@ -54,7 +52,6 @@ on property:sys.usb.config=fastboot
 
 on property:prep.decrypt=1
    start qseecomd
-   start boot-1-0
    start time_daemon
    start vendor.citadeld
    start vendor.weaver_hal
