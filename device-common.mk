@@ -154,8 +154,6 @@ PRODUCT_PACKAGES += \
     misc_writer \
     dmabuf_dump
 
-PRODUCT_PACKAGES += \
-    magiskboot_arm
 # Set the default property of tcpdump_logger on userdebug/eng ROM.
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_PROPERTY_OVERRIDES += \
