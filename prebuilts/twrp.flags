@@ -1,3 +1,4 @@
 /boot        emmc         /dev/block/bootdevice/by-name/boot       flags=flashimg;slotselect;backup=1
 /misc        emmc         /dev/block/bootdevice/by-name/misc       flags=display="Misc";backup=1
 /persist     ext4         /dev/block/bootdevice/by-name/persist    flags=display="Persist";backup=1
+/storage     ext4         /data/media/0                            flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
