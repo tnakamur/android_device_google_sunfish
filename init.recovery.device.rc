@@ -54,7 +54,7 @@ on property:sys.usb.config=mtp,adb
     restart time_daemon
 
 on property:twrp.apex.loaded=true
-   export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/apex/com.android.runtime.release.apex/lib64:/apex/com.google.android.media.swcodec.apex/lib64:/apex/com.android.media.swcodec.apex/lib64:/apex/com.android.media.swcodec/lib64/:/apex/com.android.runtime.release/lib64/:/apex/com.android.art.release.apex/lib64
+   export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/apex/com.android.runtime.release.apex/lib64:/apex/com.google.android.media.swcodec.apex/lib64:/apex/com.android.media.swcodec.apex/lib64:/apex/com.android.media.swcodec/lib64/:/apex/com.android.runtime.release/lib64/:/apex/com.android.art.release.apex/lib64:/apex/com.android.art.release/lib64/
    start prepdecrypt
 
 on property:sys.usb.config=fastboot
