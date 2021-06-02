@@ -106,6 +106,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     dmabuf_dump
 
+#TWRP
+PRODUCT_COPY_FILES += \
+    device/google/sunfish/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc
+
 # Set the default property of tcpdump_logger on userdebug/eng ROM.
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_PROPERTY_OVERRIDES += \
