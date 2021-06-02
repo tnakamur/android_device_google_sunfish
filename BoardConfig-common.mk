@@ -92,7 +92,7 @@ TARGET_RECOVERY_UI_LIB := \
     libfstab
 
 TARGET_RECOVERY_TWRP_LIB := \
-    librecovery_twrp_redbull \
+    librecovery_twrp_sunfish \
     libnos_citadel_for_recovery \
     libnos_for_recovery \
     liblog \
