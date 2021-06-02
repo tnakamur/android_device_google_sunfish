@@ -20,8 +20,6 @@ finish()
 	exit 0
 }
 
-#rm -rf /odm
-#mv /odmrename /odm
 suffix=$(getprop ro.boot.slot_suffix)
 if [ -z "$suffix" ]; then
 	suf=$(getprop ro.boot.slot)
@@ -33,31 +31,8 @@ mkdir -p $twrp_vintf_path
 cp $compat_xml_path/compatibility_matrix*xml $twrp_vintf_path
 device_codename=$(getprop ro.boot.hardware)
 is_fastboot_twrp=$(getprop ro.boot.fastboot)
-if [ ! -z "$is_fastboot_twrp" ]; then
-	# Note, this method only works on walleye as taimen still fetches the OS / patch information from the active boot slot even when fastboot booting
-	# Be sure to increase the PLATFORM_VERSION in build/core/version_defaults.mk to override Google's anti-rollback features to something rather insane
-	osver=$(getprop ro.build.version.release_orig)
-	patchlevel=$(getprop ro.build.version.security_patch_orig)
-	setprop ro.build.version.release "$osver"
-	setprop ro.build.version.security_patch "$patchlevel"
-	finish
-fi
-
-if [ -f /system_root/system/build.prop ]; then
-	# TODO: It may be better to try to read these from the boot image than from /system
-	osver=$(grep -i 'ro.build.version.release' /system_root/system/build.prop  | cut -f2 -d'=')
-	patchlevel=$(grep -i 'ro.build.version.security_patch' /system_root/system/build.prop  | cut -f2 -d'=')
-	setprop ro.build.version.release "$osver"
-	setprop ro.build.version.security_patch "$patchlevel"
-	finish
-else
-	# Be sure to increase the PLATFORM_VERSION in build/core/version_defaults.mk to override Google's anti-rollback features to something rather insane
-    osver=$(getprop ro.build.version_orig)
-    patchlevel=$(getprop ro.build.version.security_patch_orig)
-	setprop ro.build.version.release "$osver"
-	setprop ro.build.version.security_patch "$patchlevel"
-	finish
-fi
-
+resetprop ro.build.version.release "20.1.0"
+resetprop ro.build.version.security_patch "2099-12-31"
+resetprop ro.vendor.build.security_patch "2099-12-31"
 finish
 exit 0

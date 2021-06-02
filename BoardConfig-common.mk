@@ -287,4 +287,6 @@ TW_USE_TOOLBOX := true
 TW_NO_HAPTICS := true
 TW_INCLUDE_REPACKTOOLS := true
 #TW_EXTRA_LANGUAGES := true
+TW_LIBTAR_DEBUG := true
 include vendor/twrp/soong/makevars.mk
+TW_INCLUDE_RESETPROP := true
