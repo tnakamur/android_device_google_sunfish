@@ -63,6 +63,7 @@ on property:sys.usb.config=fastboot
    restart fastbootd
 
 on property:prep.decrypt=1
+   start boot-hal-1-1
    start qseecomd
    start time_daemon
    start vendor.citadeld
