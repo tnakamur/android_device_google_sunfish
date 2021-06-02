@@ -108,7 +108,10 @@ PRODUCT_PACKAGES += \
 
 #TWRP
 PRODUCT_COPY_FILES += \
-    device/google/sunfish/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc
+    device/google/sunfish/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc \
+    device/google/sunfish/prebuilts/ftm5.ko:$(TARGET_COPY_OUT_RECOVERY)/root/ftm5.ko \
+    device/google/sunfish/prebuilts/heatmap.ko:$(TARGET_COPY_OUT_RECOVERY)/root/heatmap.ko \
+    device/google/sunfish/prebuilts/touchdriver.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/touchdriver.sh
 
 # Set the default property of tcpdump_logger on userdebug/eng ROM.
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
