@@ -281,12 +281,11 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += out/target/product/$(PRODUCT_HARD
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 # MTP will not work until we update it to support ffs
-TW_EXCLUDE_MTP := true
+#TW_EXCLUDE_MTP := true
 TW_USE_TOOLBOX := true
-#TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TW_NO_HAPTICS := true
 TW_INCLUDE_REPACKTOOLS := true
 #TW_EXTRA_LANGUAGES := true
 TW_LIBTAR_DEBUG := true
-include vendor/twrp/soong/makevars.mk
 TW_INCLUDE_RESETPROP := true
+TW_USE_FSCRYPT_POLICY := 2
