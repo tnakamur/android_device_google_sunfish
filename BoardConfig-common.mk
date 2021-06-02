@@ -58,6 +58,7 @@ BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
+BOARD_KERNEL_IMAGE_NAME  := Image.lz4
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOT_HEADER_VERSION := 2
@@ -89,6 +90,15 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_UI_LIB := \
     librecovery_ui_pixel \
     libfstab
+
+TARGET_RECOVERY_TWRP_LIB := \
+    librecovery_twrp_redbull \
+    libnos_citadel_for_recovery \
+    libnos_for_recovery \
+    liblog \
+    libbootloader_message \
+    libfstab \
+    libext4_utils
 
 # Enable chain partition for system.
 BOARD_AVB_VBMETA_SYSTEM := system system_ext
