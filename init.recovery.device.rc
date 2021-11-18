@@ -47,6 +47,7 @@ on init
     # Enable thermal mitigation
     write /sys/devices/virtual/thermal/tz-by-name/backup-charge/mode enabled
     start touchdriver
+    start boot-hal-1-1
 
 on property:crypto.ready=0
     stop qseecomd
