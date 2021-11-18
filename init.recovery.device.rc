@@ -62,8 +62,12 @@ on property:twrp.apex.loaded=true
    start prepdecrypt
 
 on property:sys.usb.config=fastboot
-   start servicemanager
-   start hwservicemanager
+   stop health-hal-2-1
+   stop boot-hal-1-0
+   restart servicemanager
+   restart hwservicemanager
+   restart boot-hal-1-1
+   restart health-hal-2-0
    restart fastbootd
  
 on property:prep.decrypt=1
