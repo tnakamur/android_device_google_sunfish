@@ -176,7 +176,6 @@ PRODUCT_COPY_FILES += \
     device/google/sunfish/prebuilts/libGPreqcancel.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libGPreqcancel.so \
     device/google/sunfish/prebuilts/libqisl.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libqisl.so \
     device/google/sunfish/prebuilts/libGPreqcancel_svc.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libGPreqcancel_svc.so \
-    device/google/sunfish/prebuilts/vendor.display.config@2.0.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/vendor.display.config@2.0.so \
     device/google/sunfish/prebuilts/libdrmtime.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libdrmtime.so \
     device/google/sunfish/prebuilts/libsecureui.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libsecureui.so \
     device/google/sunfish/prebuilts/libqmi_common_so.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libqmi_common_so.so \
