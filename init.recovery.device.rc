@@ -56,7 +56,7 @@ on property:crypto.ready=0
     stop servicemanager
 
 on property:sys.usb.config=mtp,adb
-    restart time_daemon
+    #restart time_daemon
 
 on property:twrp.apex.loaded=true
    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/apex/com.android.runtime.release/lib64:/apex/com.google.android.media.swcodec/lib64:/apex/com.android.media.swcodec/lib64:/apex/com.android.media.swcodec/lib64/:/apex/com.android.runtime.release/lib64/:/apex/com.android.art.release/lib64
@@ -73,13 +73,13 @@ on property:sys.usb.config=fastboot
  
 on property:prep.decrypt=1
    start qseecomd
-   start time_daemon
+   #start time_daemon
    start vendor.citadeld
    start vendor.weaver_hal
    start gatekeeper-1-0
    start vendor.keymaster-4-1-citadel
    start keymaster-4-0
-   restart time_daemon
+   #restart time_daemon
    #start vibrator-service
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
