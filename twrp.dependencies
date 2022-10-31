@@ -1,0 +1,26 @@
+[
+  {
+    "remote": "aosp",
+    "repository": "platform/hardware/google/interfaces",
+    "target_path": "hardware/google/interfaces",
+    "branch": "refs/tags/android-12.1.0_r4"
+  },
+  {
+    "remote": "aosp",
+    "repository": "platform/hardware/google/pixel",
+    "target_path": "hardware/google/pixel",
+    "branch": "refs/tags/android-12.1.0_r4"
+  },
+  {
+    "remote": "aosp",
+    "repository": "platform/hardware/google/pixel-sepolicy",
+    "target_path": "hardware/google/pixel-sepolicy",
+    "branch": "refs/tags/android-12.1.0_r4"
+  },
+  {
+    "remote": "aosp",
+    "repository": "device/google/sunfish-sepolicy",
+    "target_path": "device/google/sunfish-sepolicy",
+    "branch": "refs/tags/android-12.1.0_r4"
+  }
+]
