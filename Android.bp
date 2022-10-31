@@ -36,3 +36,244 @@ license {
     ],
     // large-scale-change unable to identify any license_text files
 }
+
+cc_prebuilt_binary {
+    name: "android.hardware.gatekeeper@1.0-service-qti",
+    srcs: ["prebuilts/system/bin/android.hardware.gatekeeper@1.0-service-qti"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.keymaster@4.1-service.citadel",
+    srcs: ["prebuilts/system/bin/android.hardware.keymaster@4.1-service.citadel"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.keymaster@4.0-service-qti",
+    srcs: ["prebuilts/system/bin/android.hardware.keymaster@4.0-service-qti"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.weaver@1.0-service.citadel",
+    srcs: ["prebuilts/system/bin/android.hardware.weaver@1.0-service.citadel"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "citadeld",
+    srcs: ["prebuilts/system/bin/citadeld"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "qseecomd",
+    srcs: ["prebuilts/system/bin/qseecomd"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hardware.authsecret@1.0-impl.nos",
+    srcs: ["prebuilts/system/lib64/android.hardware.authsecret@1.0-impl.nos.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hardware.keymaster@4.1-impl.nos",
+    srcs: ["prebuilts/system/lib64/android.hardware.keymaster@4.1-impl.nos.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hardware.oemlock@1.0-impl.nos",
+    srcs: ["prebuilts/system/lib64/android.hardware.oemlock@1.0-impl.nos.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "android.hardware.weaver@1.0-impl.nos",
+    srcs: ["prebuilts/system/lib64/android.hardware.weaver@1.0-impl.nos.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libdiag",
+    srcs: ["prebuilts/system/lib64/libdiag.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libdrmfs",
+    srcs: ["prebuilts/system/lib64/libdrmfs.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libkeymasterdeviceutils",
+    srcs: ["prebuilts/system/lib64/libkeymasterdeviceutils.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libnos_citadeld_proxy",
+    srcs: ["prebuilts/system/lib64/libnos_citadeld_proxy.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libprotobuf-cpp-full-3.9.1",
+    srcs: ["prebuilts/system/lib64/libprotobuf-cpp-full-3.9.1.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libprotobuf-cpp-lite-3.9.1",
+    srcs: ["prebuilts/system/lib64/libprotobuf-cpp-lite-3.9.1.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libqcbor",
+    srcs: ["prebuilts/system/lib64/libqcbor.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libQSEEComAPI",
+    srcs: ["prebuilts/system/lib64/libQSEEComAPI.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libqtikeymaster4",
+    srcs: ["prebuilts/system/lib64/libqtikeymaster4.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "librpmb",
+    srcs: ["prebuilts/system/lib64/librpmb.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libssd",
+    srcs: ["prebuilts/system/lib64/libssd.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "nos_app_avb_recovery",
+    srcs: ["prebuilts/system/lib64/nos_app_avb.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libion",
+    srcs: ["prebuilts/system/lib64/libion.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library {
+    name: "libkeymasterutils",
+    srcs: ["prebuilts/system/lib64/libkeymasterutils.so"],
+    recovery_available: true,
+    check_elf_files: false,
+    strip: {
+        none: true,
+    },
+}
+

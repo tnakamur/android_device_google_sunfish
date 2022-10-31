@@ -1,3 +1,5 @@
+import /init.recovery.qcom_decrypt.rc
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -12,3 +14,18 @@ on init
     # Block layer tuning: discard chunk size up to 128MB
     # Otherwise, contiguous discards can be merged
     write /sys/block/sda/queue/discard_max_bytes 134217728
+    start vendor.citadeld
+    start vendor.weaver_hal
+    start boot-hal-1-2
+
+service vendor.citadeld /system/bin/citadeld
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service vendor.weaver_hal /system/bin/android.hardware.weaver@1.0-service.citadel
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0

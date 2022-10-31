@@ -131,3 +131,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     framework_watchdog.fatal_window.second=600 \
     framework_watchdog.fatal_count=3
 
+#TWRP
+PRODUCT_COPY_FILES += \
+	     device/google/sunfish/prebuilts/vendor/etc/vintf/manifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest.xml \
+	     device/google/sunfish/prebuilts/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc \
+	     device/google/sunfish/prebuilts/system/etc/twrp.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags \
+	     device/google/sunfish/prebuilts/system/etc/vintf/compatibility_matrix.3.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.3.xml \
+	     device/google/sunfish/prebuilts/system/etc/vintf/compatibility_matrix.4.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.4.xml \
+	     device/google/sunfish/prebuilts/system/etc/vintf/compatibility_matrix.5.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.5.xml \
+	     device/google/sunfish/prebuilts/system/etc/vintf/compatibility_matrix.6.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.6.xml \
+	     device/google/sunfish/prebuilts/system/etc/vintf/compatibility_matrix.device.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/compatibility_matrix.device.xml \
+	     device/google/sunfish/prebuilts/system/etc/vintf/manifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/vintf/manifest.xml 

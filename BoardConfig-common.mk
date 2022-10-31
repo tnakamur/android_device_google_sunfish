@@ -47,7 +47,7 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += androidboot.memcg=1 cgroup.memory=nokmem
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 #STOPSHIP
 BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
-BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += loop.max_part=7 twrpfastboot=1
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3 swiotlb=1
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1d84000.ufshc
 
@@ -61,6 +61,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
 
 # DTBO partition definitions
 BOARD_PREBUILT_DTBOIMAGE := device/google/sunfish-kernel/dtbo.img
@@ -272,3 +273,4 @@ endif
 #BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/s5-setup.sh
 
 -include vendor/google_devices/sunfish/proprietary/BoardConfigVendor.mk
+-include device/google/sunfish/twrp.mk

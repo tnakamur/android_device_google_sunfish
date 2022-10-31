@@ -929,6 +929,37 @@ include hardware/google/pixel/citadel/citadel.mk
 # Pixel Logger
 include hardware/google/pixel/PixelLogger/PixelLogger.mk
 
+# Qcom Decryption
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe \
+    qseecomd.recovery \
+    android.hardware.gatekeeper@1.0-service-qti.recovery \
+    android.hardware.keymaster@4.1-service.citadel.recovery \
+    android.hardware.keymaster@4.0-service-qti.recovery \
+    android.hardware.weaver@1.0-service.citadel.recovery \
+    citadeld.recovery \
+    android.hardware.authsecret@1.0-impl.nos.recovery \
+    android.hardware.keymaster@4.1-impl.nos.recovery \
+    android.hardware.oemlock@1.0-impl.nos.recovery \
+    android.hardware.weaver@1.0-impl.nos.recovery \
+    libdiag.recovery \
+    libdrmfs.recovery \
+    libkeymasterdeviceutils.recovery \
+    libnos_citadeld_proxy.recovery \
+    libprotobuf-cpp-full-3.9.1.recovery \
+    libprotobuf-cpp-lite-3.9.1.recovery \
+    libqcbor.recovery \
+    libQSEEComAPI.recovery \
+    libqtikeymaster4.recovery \
+    librpmb.recovery \
+    libspcom.recovery \
+    libssd.recovery \
+    nos_app_avb.recovery \
+    pixelatoms-cpp.recovery \
+    libion.recovery \
+    libkeymasterutils.recovery 
+
 # enable retrofit virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota_retrofit.mk)
 
