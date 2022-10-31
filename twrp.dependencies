@@ -22,5 +22,11 @@
     "repository": "device/google/sunfish-sepolicy",
     "target_path": "device/google/sunfish-sepolicy",
     "branch": "refs/tags/android-12.1.0_r4"
+  },
+  {
+    "remote": "TeamWin",
+    "repository": "android_kernel_google_msm-4.14",
+    "target_path": "kernel/google/msm-4.14",
+    "branch": "android-12.1"
   }
 ]

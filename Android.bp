@@ -3,6 +3,8 @@ soong_namespace {
         "hardware/google/interfaces",
         "hardware/google/pixel",
         "hardware/qcom/bootctrl",
+        "device/google/sunfish/bootctrl",
+        "device/google/sunfish/gpt-utils",
     ],
 }
 
